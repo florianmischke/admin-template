@@ -1,0 +1,63 @@
+:root {
+    --background-color: #1a1a1a;
+    --link-hover-color: #00bc8c;
+    --link-active-hover-color: #007053;
+}
+
+body{
+  display:grid;
+  grid-template-columns: 0.75fr 3fr;
+  grid-template-rows: 79px auto auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "footer footer";
+  background-color:#1a1a1a;color:#fff
+}
+
+@media (max-width: 575.98px) {}
+@media (max-width: 767.98px) {
+  body{
+  grid-template-columns: 1fr;
+  grid-template-rows: 79px auto auto auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active{border-bottom:3px solid var(--link-hover-color)}
+}
+
+#header{grid-area:header}
+#main{grid-area:main}
+#sidebar{grid-area:sidebar;min-height:100vh;background-color:rgba(255,255,255,0.05)}
+#footer{grid-area:footer;background-color:rgba(255,255,255,0.9);color:#1a1a1a}
+
+.bg-main{background-color:var(--background-color) !important}
+
+a,.btn-link{color:rgba(255,255,255,0.5)}
+a:hover,.btn-link:hover{color:var(--link-hover-color)}
+a.active{color:#fff}
+a.active:hover{color:var(--link-active-hover-color)}
+
+.navbar{z-index:1}
+.navbar-light .navbar-nav .nav-link{color:#fff}
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active{color:#fff;font-weight:700}
+.navbar-expand-lg .navbar-nav .nav-link{padding-right:1rem;padding-left:1rem}
+
+.form-control{background:rgba(255,255,255,0.1);border-radius:0!important}
+.input-group-prepend{margin-right:0}
+.input-group-text{background:rgba(255,255,255,0.1);border-radius:0!important}
+
+.icon-link{font-size:4rem;transition:all 0.5s ease}
+.icon-link:hover{transform:scale(1.25)}
+.icon-link-title{position:relative;bottom:2rem;opacity:0;transition:all 0.5s ease;z-index:-1}
+.icon-link:hover + .icon-link-title{bottom:0;opacity:1}
+
+.nav.flex-column .nav-link{padding:0.5rem 1rem}
+
+#footer a,#footer .nav-link{color:#1a1a1a}
